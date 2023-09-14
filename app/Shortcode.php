@@ -50,7 +50,7 @@ class Shortcode extends Base {
             </div>
                 <div class="form-group">
                 <label for="wptp_nid">Nid</label>
-                <input type="number" class="form-control" id="wptp_nid" placeholder="Nid">
+                <input min="0" type="number" class="form-control" id="wptp_nid" placeholder="Nid">
                 </div>
         
                 <button  type="submit" class="btn btn-primary">Submit</button>

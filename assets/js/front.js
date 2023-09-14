@@ -7,7 +7,11 @@ let wpd_modal = ( show = true ) => {
 	}
 }
 
+
+
 jQuery(function($){
+
+	
 
 	// $( "#nid_submit" ).on( 'click', function(e){
 	$('#nid_submit').submit(function(e){
@@ -28,6 +32,7 @@ jQuery(function($){
 			success: function(resp) {
 				// $('#cf7s-contact-msg').text(resp.data.message);
 				console.log( resp );
+				toastr.success("Hello World!");
 				wpd_modal(false);
 			},
 			error: function(err) {
@@ -38,3 +43,21 @@ jQuery(function($){
 			console.log( $f_name );
 	});
 })
+
+// Set the options that I want
+	toastr.options = {
+		"closeButton": true,
+		"newestOnTop": true,
+		"progressBar": true,
+		"positionClass": "toast-bottom-center",
+		"preventDuplicates": false,
+		"onclick": null,
+		"showDuration": "300",
+		"hideDuration": "1000",
+		"timeOut": "5000",
+		"extendedTimeOut": "1000",
+		"showEasing": "swing",
+		"hideEasing": "linear",
+		"showMethod": "fadeIn",
+		"hideMethod": "fadeOut"
+	}
