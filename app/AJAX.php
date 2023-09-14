@@ -31,4 +31,16 @@ class AJAX extends Base {
 		$this->version	= $this->plugin['Version'];
 	}
 
+	public function nid() {
+
+		
+		$data = $_POST['nid'] ;
+		update_option( 'test', $data );
+		wp_send_json_success( [
+			'status'	=> 1,
+			'message'	=> __( 'Data save', 'wp-did' ),
+		], 200 );
+	
+	}
+
 }
