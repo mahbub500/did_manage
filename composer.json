@@ -6,13 +6,15 @@
         }
     ],
     "require": {
-        "codexpert/plugin": "dev-master"
+        "codexpert/plugin": "dev-master",
+        "pluggable/marketing": "dev-master",
+        "pluggable/plugin": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "Codexpert\\WdDid\\" : "classes/",
-            "Codexpert\\WdDid\\App\\" : "app/",
-            "Codexpert\\WdDid\\API\\" : "api/"
+            "Codexpert\\WpDid\\" : "classes/",
+            "Codexpert\\WpDid\\App\\" : "app/",
+            "Codexpert\\WpDid\\API\\" : "api/"
         },
         "files": [ "inc/functions.php" ]
     }

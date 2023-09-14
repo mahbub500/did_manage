@@ -2,7 +2,7 @@
 /**
  * All helpers functions
  */
-namespace Codexpert\WdDid;
+namespace Codexpert\WpDid;
 
 /**
  * if accessed directly, exit.

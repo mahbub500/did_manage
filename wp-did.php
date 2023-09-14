@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Wp Did
- * Description: Did Manage System for Wp Writer.
+ * Description: Did Manage System for Did Writer.
  * Plugin URI: https://codexpert.io
  * Author: Codexpert, Inc
  * Author URI: https://codexpert.io
@@ -10,9 +10,13 @@
  * Domain Path: /languages
  */
 
-namespace Codexpert\WdDid;
+namespace Codexpert\WpDid;
 use Codexpert\Plugin\Notice;
-use Codexpert\Plugin\Feature;
+// use Codexpert\Plugin\Feature;
+
+use Pluggable\Marketing\Survey;
+use Pluggable\Marketing\Feature;
+use Pluggable\Marketing\Deactivator;
 
 /**
  * if accessed directly, exit.
@@ -161,7 +165,7 @@ final class Plugin {
 			 * 
 			 * @author Codexpert <hi@codexpert.io>
 			 */
-			$feature = new Feature( $this->plugin );
+			$feature = new Feature( WP_DID );
 
 		else : // !is_admin() ?
 

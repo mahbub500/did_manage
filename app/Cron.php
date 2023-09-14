@@ -2,7 +2,7 @@
 /**
  * All cron related functions
  */
-namespace Codexpert\WdDid\App;
+namespace Codexpert\WpDid\App;
 use Codexpert\Plugin\Base;
 
 /**

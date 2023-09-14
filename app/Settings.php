@@ -2,8 +2,8 @@
 /**
  * All settings related functions
  */
-namespace Codexpert\WdDid\App;
-use Codexpert\WdDid\Helper;
+namespace Codexpert\WpDid\App;
+use Codexpert\WpDid\Helper;
 use Codexpert\Plugin\Base;
 use Codexpert\Plugin\Settings as Settings_API;
 

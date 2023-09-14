@@ -2,7 +2,7 @@
 /**
  * All admin facing functions
  */
-namespace Codexpert\WdDid\App;
+namespace Codexpert\WpDid\App;
 use Codexpert\Plugin\Base;
 use Codexpert\Plugin\Metabox;
 

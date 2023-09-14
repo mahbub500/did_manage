@@ -2,7 +2,7 @@
 /**
  * All common functions to load in both admin and front
  */
-namespace Codexpert\WdDid\App;
+namespace Codexpert\WpDid\App;
 use Codexpert\Plugin\Base;
 
 /**
