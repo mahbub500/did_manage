@@ -31,7 +31,18 @@ class Front extends Base {
 		$this->version	= $this->plugin['Version'];
 	}
 
-	public function head() {}
+	public function head() {
+	// $name = $_POST['name']; 
+	$nid 		= '1829493782';
+	
+		
+	$duplicate 	= prevent_duplicate_entry( $nid );
+
+	
+
+	// Helper::pri( $duplicate );
+
+	}
 	
 	/**
 	 * Enqueue JavaScripts and stylesheets
@@ -41,6 +52,8 @@ class Front extends Base {
 
 		wp_enqueue_style( $this->slug, plugins_url( "/assets/css/front{$min}.css", WP_DID ), '', $this->version, 'all' );
 		wp_enqueue_style( 'toster', 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css', '', $this->version, 'all' );
+
+		wp_enqueue_style( 'boostrap', 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css', '', $this->version, 'all' );
 
 		wp_enqueue_script( $this->slug, plugins_url( "/assets/js/front{$min}.js", WP_DID ), [ 'jquery' ], $this->version, true );
 		wp_enqueue_script( 'toster', 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js', '', $this->version, true );

@@ -198,6 +198,7 @@ final class Plugin {
 		 * Executes on both the admin area and front area
 		 */
 		$common = new App\Common( $this->plugin );
+		$common->activate( 'register_nid_table' );
 
 		/**
 		 * AJAX related hooks

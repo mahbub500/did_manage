@@ -34,8 +34,16 @@ class AJAX extends Base {
 	public function nid() {
 
 		
-		$data = $_POST['nid'] ;
-		update_option( 'test', $data );
+		$nid 		= $_POST['nid'] ;
+		$duplicate 	= prevent_duplicate_entry( $nid );
+
+		if ( $duplicate ) {
+			wp_send_json_success( [
+				'status'	=> 0,
+				'message'	=> __( 'Nid Already Exit', 'wp-did' ),
+			], 200 );
+		}
+
 		wp_send_json_success( [
 			'status'	=> 1,
 			'message'	=> __( 'Data save', 'wp-did' ),

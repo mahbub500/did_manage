@@ -17,3 +17,27 @@ function wpd_site_url() {
 	return $url;
 }
 endif;
+
+if ( ! function_exists( 'prevent_duplicate_entry' ) ) {
+
+	function prevent_duplicate_entry( $nid ) {
+	    global $wpdb;
+
+	    // Name of your custom table
+	    $table_name = $wpdb->prefix . 'nid_table';
+
+	    // Check if the entry with the provided email already exists
+	    $existing_entry = $wpdb->get_row(
+	        $wpdb->prepare("SELECT * FROM $table_name WHERE nid = %s", $nid )
+	    );
+
+	    if ( ! $existing_entry ) {
+	        // Entry with the same Nid already exists, prevent the insertion
+	        return false;
+	    }
+
+	    // Entry doesn't exist, you can proceed with the insertion
+	    return true;
+	}
+}
+

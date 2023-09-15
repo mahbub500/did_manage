@@ -31,8 +31,13 @@ jQuery(function($){
 			dataType: 'JSON',
 			success: function(resp) {
 				// $('#cf7s-contact-msg').text(resp.data.message);
-				console.log( resp );
-				toastr.success("Hello World!");
+				console.log( resp.data.status );
+				if ( resp.data.status == 0 ) {
+					toastr.error( resp.data.message );
+				}
+				else{
+					toastr.success( resp.data.message );
+				}
 				wpd_modal(false);
 			},
 			error: function(err) {
@@ -40,6 +45,7 @@ jQuery(function($){
 				wpd_modal(false);
 			}
 		});
+				console.log( $nid );
 			console.log( $f_name );
 	});
 })
