@@ -44,6 +44,14 @@ class AJAX extends Base {
 			], 200 );
 		}
 
+		$data = array(
+		    'column1' => 'value1',
+		    'column2' => 'value2',
+		    'column3' => 'value3',
+		);
+
+		// $wpdb->insert( $table_name, $data );
+
 		wp_send_json_success( [
 			'status'	=> 1,
 			'message'	=> __( 'Data save', 'wp-did' ),

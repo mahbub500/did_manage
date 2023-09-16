@@ -75,6 +75,7 @@ final class Plugin {
 	 */
 	private function include() {
 		require_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
+		require_once( dirname( __FILE__ ) . '/inc/functions.php' );
 	}
 
 	/**

@@ -4,6 +4,7 @@
  */
 namespace Codexpert\WpDid\App;
 use Codexpert\Plugin\Base;
+use Codexpert\WpDid\Helper;
 
 /**
  * if accessed directly, exit.
@@ -32,10 +33,7 @@ class Shortcode extends Base {
     }
 
     public function profile() {
-        $html = '
-        
-
-        ';
+        echo Helper::get_template( 'nid', 'views' );
 
         return $html;
 

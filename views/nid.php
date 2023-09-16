@@ -1,3 +1,7 @@
+<?php 
+
+?>
+
 <div class="container">
 <div class="row">
 <form id="nid_submit" >
