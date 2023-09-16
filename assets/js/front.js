@@ -19,6 +19,9 @@ jQuery(function($){
 		let $name 	= $( '#wptp_name' ).val();
 		let $f_name = $( '#wptp_f_name' ).val();
 		let $nid  	= $( '#wptp_nid' ).val();
+		let $form 	= $(this);
+
+		console.log( $form.serialize() );
 		wpd_modal(true);
 		$.ajax({
 			url: WP_DID.ajaxurl,

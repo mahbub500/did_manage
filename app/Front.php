@@ -31,18 +31,7 @@ class Front extends Base {
 		$this->version	= $this->plugin['Version'];
 	}
 
-	public function head() {
-	// $name = $_POST['name']; 
-	$nid 		= '1829493782';
-	
-		
-	$duplicate 	= prevent_duplicate_entry( $nid );
-
-	
-
-	// Helper::pri( $duplicate );
-
-	}
+	public function head() {}
 	
 	/**
 	 * Enqueue JavaScripts and stylesheets
