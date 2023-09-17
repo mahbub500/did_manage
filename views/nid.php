@@ -1,9 +1,16 @@
-<?php 
 
-?>
 
 <div class="container">
 	<div class="row">
+		<?php 
+	$is_loged_in = is_user_logged_in();
+	if ( false == $is_loged_in ) {
+		?>
+		<a href="<?php echo wp_login_url( get_permalink() ); ?>" title="Login">Please Login</a>
+		<?php 
+			return $login_url;
+		}
+	?>
 		<form id="nid_submit"  >
 			<?php wp_nonce_field(); ?>
 			<input type="hidden" name="action" value="store_nid">
