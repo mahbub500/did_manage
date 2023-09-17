@@ -39,6 +39,8 @@ class AJAX extends Base {
 				'message'	=> __( 'Unauthorized', 'wp-did' ),
 			], 401 );
 		}
+
+		$current_user = get_current_user_id();
 		
 		$name 		= $_POST['wptp_name'] ;
 		$f_name 	= $_POST['wptp_f_name'] ;
@@ -60,6 +62,8 @@ class AJAX extends Base {
 		    'name'  		=> $this->sanitize( $name ),
 		    'father_name'  	=> $this->sanitize( $f_name ),
 		    'nid'  			=> $this->sanitize( $nid ),
+		    'user_id'  		=> $this->sanitize( $current_user ),
+		    'date'  		=> date("Y-m-d H:i:s"),
 		);
 
 		$wpdb->insert( $table_name, $data_to_insert );

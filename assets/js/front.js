@@ -7,8 +7,6 @@ let wpd_modal = ( show = true ) => {
 	}
 }
 
-
-
 jQuery(function($){
 
 	$("#wptp_submit").attr("disabled", true);
