@@ -45,7 +45,7 @@ class Common extends Base {
 			id INT NOT NULL AUTO_INCREMENT,
 			`name` varchar(255) NULL,
 			`father_name` varchar(255) NULL,
-			`nid` INT NULL,   
+			`nid` BIGINT NULL,   
 			PRIMARY KEY (id)
 		) $create_nid_table;";
 

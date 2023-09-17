@@ -11,14 +11,30 @@ let wpd_modal = ( show = true ) => {
 
 jQuery(function($){
 
-	
+	let is_nid_vlid = false;
 
-	// $( "#nid_submit" ).on( 'click', function(e){
+	$("#wptp_submit").attr("disabled", true);
+
+	$('#wptp_nid').on('focusout', function(){
+		let nid_length = $.trim($("#wptp_nid").val()).length
+		if ( nid_length >= 10 && nid_length <= 15 ) {
+			is_nid_vlid = true;
+			$("#wptp_submit").attr("disabled", false);
+			$("#wptp_nid_warning").hide();
+
+		}
+		else{
+			$("#wptp_submit").attr("disabled", true);
+			$("#wptp_nid_warning").show();
+		}
+	});
+
+	if ( true == is_nid_vlid ) {
+		
+	}
+
 	$('#nid_submit').submit(function(e){
 		e.preventDefault();
-		// let $name 	= $( '#wptp_name' ).val();
-		// let $f_name = $( '#wptp_f_name' ).val();
-		// let $nid  	= $( '#wptp_nid' ).val();
 		let $form 	= $(this);
 
 		// console.log( $form.serialize() );
@@ -29,8 +45,6 @@ jQuery(function($){
 			type: 'POST',
 			dataType: 'JSON',
 			success: function(resp) {
-				// $('#cf7s-contact-msg').text(resp.data.message);
-				// console.log( resp.data.status );
 				if ( resp.data.status == 0 ) {
 					toastr.error( resp.data.message );
 				}
@@ -40,12 +54,9 @@ jQuery(function($){
 				wpd_modal(false);
 			},
 			error: function(err) {
-				// $('#cf7s-contact-msg').text(err.data.message);
 				wpd_modal(false);
 			}
 		});
-			// 	console.log( $nid );
-			// console.log( $f_name );
 	});
 })
 

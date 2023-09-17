@@ -41,7 +41,7 @@ class AJAX extends Base {
 		}
 		
 		$name 		= $_POST['wptp_name'] ;
-		$f_name= $_POST['wptp_f_name'] ;
+		$f_name 	= $_POST['wptp_f_name'] ;
 		$nid 		= $_POST['wptp_nid'] ;
 
 		$duplicate 	= prevent_duplicate_entry( $nid );

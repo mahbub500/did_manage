@@ -20,9 +20,10 @@
 				</div>
 				<div class="form-group">
 					<label for="wptp_nid">Nid</label>
-					<input min="0" type="number" class="form-control" id="wptp_nid" name="wptp_nid" placeholder="Nid">
+					<input min="10" type="number" class="form-control" id="wptp_nid" name="wptp_nid" placeholder="Nid">
+					<small id="wptp_nid_warning" class="form-text text-muted text-danger">NID Must be minimum 10 Digit & Max 15 Digit</small>
 				</div>
-				<button  type="submit" value="Submit" class="btn btn-primary">Submit</button>
+				<button id="wptp_submit"  type="submit" value="Submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>  
 		<div class="col-md-3"></div>
