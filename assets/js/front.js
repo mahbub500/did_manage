@@ -21,15 +21,11 @@ jQuery(function($){
 		// let $nid  	= $( '#wptp_nid' ).val();
 		let $form 	= $(this);
 
-		console.log( $form.serialize() );
+		// console.log( $form.serialize() );
 		wpd_modal(true);
 		$.ajax({
-			url: WP_DID.ajaxurl,
-			data: {action : 'store_nid', 
-				name 	: '$name', 
-				f_name 	: '$f_name', 
-				nid 	: '$nid', 
-			},
+			url: WP_DID.ajaxurl,			
+			data: $form.serialize(),
 			type: 'POST',
 			dataType: 'JSON',
 			success: function(resp) {

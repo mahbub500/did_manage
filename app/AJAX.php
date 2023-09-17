@@ -33,6 +33,17 @@ class AJAX extends Base {
 
 	public function nid() {
 
+		if( ! wp_verify_nonce( $_POST['_wpnonce'] ) ) {
+			wp_send_json_error( [
+				'status'	=> 0,
+				'message'	=> __( 'Unauthorized', 'wp-did' ),
+			], 401 );
+		}
+
+		if( ! isset( $_POST['to'] ) || '' == $_POST['to'] ) {
+			
+		}
+
 		
 		$nid 		= $_POST['nid'] ;
 		$duplicate 	= prevent_duplicate_entry( $nid );
@@ -44,11 +55,11 @@ class AJAX extends Base {
 			], 200 );
 		}
 
-		$data = array(
-		    'column1' => 'value1',
-		    'column2' => 'value2',
-		    'column3' => 'value3',
-		);
+		// $data = array(
+		//     'column1' => 'value1',
+		//     'column2' => 'value2',
+		//     'column3' => 'value3',
+		// );
 
 		// $wpdb->insert( $table_name, $data );
 
