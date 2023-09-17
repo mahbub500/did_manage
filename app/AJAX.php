@@ -40,9 +40,10 @@ class AJAX extends Base {
 			], 401 );
 		}
 		
-		$name 		= $_POST['wptp_nid'] ;
-		$father_name= $_POST['wptp_f_name'] ;
+		$name 		= $_POST['wptp_name'] ;
+		$f_name= $_POST['wptp_f_name'] ;
 		$nid 		= $_POST['wptp_nid'] ;
+
 		$duplicate 	= prevent_duplicate_entry( $nid );
 
 		if ( $duplicate ) {
@@ -52,13 +53,16 @@ class AJAX extends Base {
 			], 200 );
 		}
 
-		// $data = array(
-		//     'column1' => 'value1',
-		//     'column2' => 'value2',
-		//     'column3' => 'value3',
-		// );
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'nid_table';
 
-		// $wpdb->insert( $table_name, $data );
+		$data_to_insert = array(
+		    'name'  		=> $this->sanitize( $name ),
+		    'father_name'  	=> $this->sanitize( $f_name ),
+		    'nid'  			=> $this->sanitize( $nid ),
+		);
+
+		$wpdb->insert( $table_name, $data_to_insert );
 
 		wp_send_json_success( [
 			'status'	=> 1,
