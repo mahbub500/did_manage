@@ -43,10 +43,15 @@ class Front extends Base {
 		wp_enqueue_style( $this->slug, plugins_url( "/assets/css/front{$min}.css", WP_DID ), '', $this->version, 'all' );
 		wp_enqueue_style( 'toster', 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css', '', $this->version, 'all' );
 
+		wp_enqueue_style( 'datatable', 'cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css', '', $this->version, 'all' );
+
+		
+
 		wp_enqueue_style( 'boostrap', 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css', '', $this->version, 'all' );
 
 		wp_enqueue_script( $this->slug, plugins_url( "/assets/js/front{$min}.js", WP_DID ), [ 'jquery' ], $this->version, true );
 		wp_enqueue_script( 'toster', 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js', '', $this->version, true );
+		wp_enqueue_script( 'datatable', 'cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js', '', $this->version, true );
 		
 		$localized = [
 			'ajaxurl'	=> admin_url( 'admin-ajax.php' ),

@@ -50,6 +50,10 @@ jQuery(function($){
 			}
 		});
 	});
+
+	// DataTable
+	let table = new DataTable('#nid_submit');
+
 })
 
 // Set the options that I want
