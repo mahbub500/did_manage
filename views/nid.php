@@ -11,12 +11,12 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="wptp_name">Name</label>
-					<input type="text" class="form-control" id="wptp_name" name="wptp_name" placeholder="Enter name">
+					<input type="text" required class="form-control" id="wptp_name" name="wptp_name" placeholder="Enter name">
 				</div>
 
 				<div class="form-group">
 					<label for="wptp_f_name">Father Name</label>
-					<input type="text" class="form-control" id="wptp_f_name" name="wptp_f_name" placeholder="Enter Father Name">
+					<input type="text" required class="form-control" id="wptp_f_name" name="wptp_f_name" placeholder="Enter Father Name">
 				</div>
 				<div class="form-group">
 					<label for="wptp_nid">Nid</label>

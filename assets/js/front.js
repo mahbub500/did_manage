@@ -11,14 +11,11 @@ let wpd_modal = ( show = true ) => {
 
 jQuery(function($){
 
-	let is_nid_vlid = false;
-
 	$("#wptp_submit").attr("disabled", true);
 
-	$('#wptp_nid').on('focusout', function(){
+	$('#wptp_nid').keyup(function(){
 		let nid_length = $.trim($("#wptp_nid").val()).length
 		if ( nid_length >= 10 && nid_length <= 15 ) {
-			is_nid_vlid = true;
 			$("#wptp_submit").attr("disabled", false);
 			$("#wptp_nid_warning").hide();
 
@@ -29,15 +26,10 @@ jQuery(function($){
 		}
 	});
 
-	if ( true == is_nid_vlid ) {
-		
-	}
-
 	$('#nid_submit').submit(function(e){
 		e.preventDefault();
 		let $form 	= $(this);
 
-		// console.log( $form.serialize() );
 		wpd_modal(true);
 		$.ajax({
 			url: WP_DID.ajaxurl,			
@@ -50,7 +42,9 @@ jQuery(function($){
 				}
 				else{
 					toastr.success( resp.data.message );
+					location.reload();
 				}
+								
 				wpd_modal(false);
 			},
 			error: function(err) {
