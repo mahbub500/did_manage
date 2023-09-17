@@ -16,11 +16,13 @@ jQuery(function($){
 		if ( nid_length >= 10 && nid_length <= 15 ) {
 			$("#wptp_submit").attr("disabled", false);
 			$("#wptp_nid_warning").hide();
+			$("#wptp_nid").css('border','');
 
 		}
 		else{
 			$("#wptp_submit").attr("disabled", true);
 			$("#wptp_nid_warning").show();
+			$("#wptp_nid").css('border','1px solid red');
 		}
 	});
 
