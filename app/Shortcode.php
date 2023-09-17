@@ -33,9 +33,9 @@ class Shortcode extends Base {
     }
 
     public function profile() {
-        echo Helper::get_template( 'nid', 'views' );
+		$html =  Helper::get_template( 'nid', 'views' );
 
-        return $html;
+		return $html;
 
     }
 }
