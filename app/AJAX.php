@@ -39,13 +39,10 @@ class AJAX extends Base {
 				'message'	=> __( 'Unauthorized', 'wp-did' ),
 			], 401 );
 		}
-
-		if( ! isset( $_POST['to'] ) || '' == $_POST['to'] ) {
-			
-		}
-
 		
-		$nid 		= $_POST['nid'] ;
+		$name 		= $_POST['wptp_nid'] ;
+		$father_name= $_POST['wptp_f_name'] ;
+		$nid 		= $_POST['wptp_nid'] ;
 		$duplicate 	= prevent_duplicate_entry( $nid );
 
 		if ( $duplicate ) {
