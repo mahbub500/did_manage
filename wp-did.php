@@ -12,7 +12,6 @@
 
 namespace Codexpert\WpDid;
 use Codexpert\Plugin\Notice;
-// use Codexpert\Plugin\Feature;
 
 use Pluggable\Marketing\Survey;
 use Pluggable\Marketing\Feature;

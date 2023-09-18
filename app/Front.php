@@ -5,6 +5,7 @@
 namespace Codexpert\WpDid\App;
 use Codexpert\Plugin\Base;
 use Codexpert\WpDid\Helper;
+use Codexpert\WpDid\Nid;
 /**
  * if accessed directly, exit.
  */
