@@ -2,6 +2,7 @@
 
 <div class="container">
 	<div class="row">
+
 		<?php 
 	$is_loged_in = is_user_logged_in();
 	if ( false == $is_loged_in ) {
@@ -35,4 +36,15 @@
 		</div>  
 		<div class="col-md-3"></div>
 	</div>
+
+</div>
+
+<div class="container">
+	<div class="col-md-2">
+		<ul class="nav nav-pills nav-stacked">
+		<li role="presentation" class="active"><a href="#">Home</a></li>
+		<li role="presentation"><a href="#">Profile</a></li>
+		<li role="presentation"><a href="#">Messages</a></li>
+	</div>
+</ul>
 </div>
