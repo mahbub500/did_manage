@@ -40,6 +40,8 @@ class Front extends Base {
 	public function enqueue_scripts() {
 		$min = defined( 'WP_DID_DEBUG' ) && WP_DID_DEBUG ? '' : '.min';
 
+		wp_enqueue_media();
+
 		wp_enqueue_style( $this->slug, plugins_url( "/assets/css/front{$min}.css", WP_DID ), '', $this->version, 'all' );
 		wp_enqueue_style( 'toster', 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css', '', $this->version, 'all' );
 

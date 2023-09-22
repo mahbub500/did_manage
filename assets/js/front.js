@@ -26,6 +26,22 @@ jQuery(function($){
 		}
 	});
 
+	// Upload Image
+
+	$('#wpdid_img_upload').on( 'click', function (e){
+		e.preventDefault();
+
+		var image = wp.media({
+			title: 'Upload Image',
+			multiple: false // Set to true if you want to allow multiple image uploads
+		}).open().on('select', function() {
+			var attachment = image.state().get('selection').first().toJSON();
+			
+			$('#wpdid_nid_image').attr('src', attachment.url);
+			$('#wp_nid_img_url').val(attachment.url);
+		});
+	} );
+
 	$('#nid_submit').submit(function(e){
 		e.preventDefault();
 		let $form 	= $(this);
