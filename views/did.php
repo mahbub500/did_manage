@@ -10,6 +10,12 @@
 		<?php 
 			return $login_url;
 		}
+
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'nid_table';
+		$query = "SELECT * FROM $table_name";
+		$results = $wpdb->get_results($query);
+
 	?>
 		<form id="did_submit"  >
 			<?php wp_nonce_field(); ?>
@@ -19,9 +25,14 @@
 				<div class="form-group">
 					<label for="wpdid_did_owner">Owner</label>
 					<select class="form-control" name="wp_did_owner[]" id="wp_did_owner" multiple="multiple">
-					  <option value="orange" >orange</option>
-					  <option value="white" >white</option>
-					  <option value="purple" >purple</option>
+
+					  <?php 
+					  foreach ( $results as $key => $result ) {
+
+					  printf( '<option value="%1$s"> Id: %1$s Name: %2$s </option>', $result->nid, $result->name );
+						}
+
+					   ?>
 					</select>
 				</div>
 

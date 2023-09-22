@@ -32,9 +32,7 @@ class Front extends Base {
 		$this->version	= $this->plugin['Version'];
 	}
 
-	public function head() {
-		// Helper::pri( get_option( 'wp_did' ) );
-	}
+	public function head() {}
 	
 	/**
 	 * Enqueue JavaScripts and stylesheets
