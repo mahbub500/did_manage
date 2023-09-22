@@ -75,4 +75,22 @@ class AJAX extends Base {
 	
 	}
 
+	public function did() {
+
+		if( ! wp_verify_nonce( $_POST['_wpnonce'] ) ) {
+			wp_send_json_error( [
+				'status'	=> 0,
+				'message'	=> __( 'Unauthorized', 'wp-did' ),
+			], 401 );
+		}
+
+		update_option( 'wp_did', $_POST );
+		update_option( 'wp_did_owner', $_POST['wp_did_owner'] );
+
+		wp_send_json_success( [
+			'status'	=> 1,
+			'message'	=> __( 'Did save', 'wp-did' ),
+		], 200 );
+	}
+
 }

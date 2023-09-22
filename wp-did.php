@@ -206,6 +206,7 @@ final class Plugin {
 		 */
 		$ajax = new App\AJAX( $this->plugin );
 		$ajax->priv( 'store_nid', 'nid' );
+		$ajax->priv( 'store_did', 'did' );
 	}
 
 	/**

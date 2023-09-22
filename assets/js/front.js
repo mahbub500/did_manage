@@ -54,20 +54,46 @@ jQuery(function($){
 	});
 
 	// DataTable
-	let table = new DataTable('#nid_submit');
+	// let table = new DataTable('#nid_submit');
 
-	// JQuery Select Two 
-	// $("#wp_did_owner").select2({
-	//     tags: true,
-	//     tokenSeparators: [',', ' ']
-	// });
-
-	// $('#wp_did_owner').select2();
-
+	// select2 for did 
 	$("#wp_did_owner").select2({
 		tags: true,
 		tokenSeparators: [',', ' ']
-	})
+	});
+
+	// form submit for did
+
+	$('#did_submit').submit(function(e){
+		e.preventDefault();
+
+		let $form 	= $(this);
+		let owner 	=  $('#wp_did_owner').select2('data');
+		// let owner 	=  $('#wp_did_owner').find(':selected').data('id');
+		console.log( owner );
+
+		wpd_modal(true);
+		$.ajax({
+			url: WP_DID.ajaxurl,			
+			data: $form.serialize(),
+			type: 'POST',
+			dataType: 'JSON',
+			success: function(resp) {
+				if ( resp.data.status == 0 ) {
+					toastr.error( resp.data.message );
+				}
+				else{
+					toastr.success( resp.data.message );
+					// location.reload();
+				}
+								
+				wpd_modal(false);
+			},
+			error: function(err) {
+				wpd_modal(false);
+			}
+		});
+	});
 
 })
 
