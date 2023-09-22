@@ -38,4 +38,11 @@ class Shortcode extends Base {
 		return $html;
 
     }
+
+    public function did() {
+        $html =  Helper::get_template( 'did', 'views' );
+
+        return $html;
+
+    }
 }

@@ -45,16 +45,25 @@ class Front extends Base {
 
 		wp_enqueue_style( 'datatable', 'cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css', '', $this->version, 'all' );
 
-		
-
 		wp_enqueue_style( 'boostrap', 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css', '', $this->version, 'all' );
+
+		// wp_enqueue_style( 'select2', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css', '', $this->version, 'all' );
 
 		wp_enqueue_script( $this->slug, plugins_url( "/assets/js/front{$min}.js", WP_DID ), [ 'jquery' ], $this->version, true );
 		
 		wp_enqueue_script( 'toster', 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js', '', $this->version, true );
 
 		wp_enqueue_script( 'boostrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js', '', $this->version, true );
-		wp_enqueue_script( 'datatable', 'cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js', '', $this->version, true );
+
+		wp_enqueue_script( 'datatable', 'https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js', '', $this->version, true );
+
+		// wp_enqueue_script( 'select2', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', '', $this->version, true );
+
+		// if( $this->has_select2() ) {
+        	wp_enqueue_style( 'select2' );
+        	wp_enqueue_script( 'select2' );
+        // }
+
 		
 		$localized = [
 			'ajaxurl'	=> admin_url( 'admin-ajax.php' ),

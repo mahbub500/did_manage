@@ -14,3 +14,7 @@
 #wp-did-modal-loader {
     position: absolute;
 }
+
+.select2-dropdown .select2-dropdown--below"{
+    margin-top: 35px; 
+}

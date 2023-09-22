@@ -11,14 +11,18 @@
 			return $login_url;
 		}
 	?>
-		<form id="nid_submit"  >
+		<form id="did_submit"  >
 			<?php wp_nonce_field(); ?>
-			<input type="hidden" name="action" value="store_nid">
+			<input type="hidden" name="action" value="store_did">
 			<div class="col-md-3"></div>    
 			<div class="col-md-6">
 				<div class="form-group">
-					<label for="wptp_name">Name</label>
-					<input type="text" required class="form-control" id="wptp_name" name="wptp_name" placeholder="Enter name">
+					<label for="wptp_did_owner">Owner</label>
+					<select class="form-control" name="wp_did_owner" id="wp_did_owner" multiple="multiple">
+					  <option >orange</option>
+					  <option>white</option>
+					  <option >purple</option>
+					</select>
 				</div>
 
 				<div class="form-group">
@@ -35,5 +39,4 @@
 		</div>  
 		<div class="col-md-3"></div>
 	</div>
-
 </div>

@@ -56,6 +56,19 @@ jQuery(function($){
 	// DataTable
 	let table = new DataTable('#nid_submit');
 
+	// JQuery Select Two 
+	// $("#wp_did_owner").select2({
+	//     tags: true,
+	//     tokenSeparators: [',', ' ']
+	// });
+
+	// $('#wp_did_owner').select2();
+
+	$("#wp_did_owner").select2({
+		tags: true,
+		tokenSeparators: [',', ' ']
+	})
+
 })
 
 // Set the options that I want
