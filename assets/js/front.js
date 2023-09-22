@@ -58,8 +58,9 @@ jQuery(function($){
 
 	// select2 for did 
 	$("#wp_did_owner").select2({
-		tags: true,
-		tokenSeparators: [',', ' ']
+		tags: false,
+		placeholder: 'Select all owner',
+		
 	});
 
 	// form submit for did
