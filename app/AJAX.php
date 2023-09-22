@@ -84,9 +84,6 @@ class AJAX extends Base {
 			], 401 );
 		}
 
-		update_option( 'wp_did', $_POST );
-		update_option( 'wp_did_owner', $_POST['wp_did_owner'] );
-
 		wp_send_json_success( [
 			'status'	=> 1,
 			'message'	=> __( 'Did save', 'wp-did' ),

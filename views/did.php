@@ -29,7 +29,7 @@
 					  <?php 
 					  foreach ( $results as $key => $result ) {
 
-					  printf( '<option value="%1$s"> Id: %1$s Name: %2$s </option>', $result->nid, $result->name );
+					  printf( '<option value="%1$s">%1$s( %2$s )</option>', $result->nid, $result->name );
 						}
 
 					   ?>
