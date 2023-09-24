@@ -71,7 +71,16 @@ jQuery(function($){
 
 	DataTable
 	// let table = new DataTable('#nid_submit');
-	$table = new DataTable('#wp_did_table');
+	$table = new DataTable('#wp_did_table', {
+		paging: true,
+	    scrollCollapse: true,
+	    scrollY: '50vh',
+	    search: {
+        	return: true
+    	}
+
+	    // order: [[3, 'desc']]
+	});
 	table.order([1, 'asc']).draw();
 
 	// select2 for did 
