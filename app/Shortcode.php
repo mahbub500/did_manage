@@ -34,22 +34,18 @@ class Shortcode extends Base {
 
     public function profile() {
 		$html =  Helper::get_template( 'nid', 'views' );
-
-		return $html;
+    return $html;
 
     }
 
     public function did() {
         $html =  Helper::get_template( 'did', 'views' );
-
         return $html;
 
     }
 
     public function dashboard() {
         $html =  Helper::get_template( 'dashboard', 'views' );
-
         return $html;
-
     }
 }

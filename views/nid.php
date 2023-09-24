@@ -42,5 +42,82 @@
 		</div>  
 		<div class="col-md-3"></div>
 	</div>
+</div>
 
+<div class="container ">
+	<div class="row mt-1">
+		<div class="col-md-12">
+			<table id="wp_did_table" class="table table-striped table-bordered" style="width:100%">
+				<thead>
+					<tr>
+						<th>Test</th>
+						<th>Test</th>
+						<th>Test</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr><tr>
+						<td>data1</td>
+						<td>data1</td>
+						<td>data1</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>foot1</td>
+						<td>foot1</td>
+						<td>foot1</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
 </div>

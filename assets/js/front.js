@@ -69,8 +69,10 @@ jQuery(function($){
 		});
 	});
 
-	// DataTable
+	DataTable
 	// let table = new DataTable('#nid_submit');
+	$table = new DataTable('#wp_did_table');
+	table.order([1, 'asc']).draw();
 
 	// select2 for did 
 	$("#wp_did_owner").select2({
