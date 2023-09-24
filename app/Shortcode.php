@@ -45,4 +45,11 @@ class Shortcode extends Base {
         return $html;
 
     }
+
+    public function dashboard() {
+        $html =  Helper::get_template( 'dashboard', 'views' );
+
+        return $html;
+
+    }
 }

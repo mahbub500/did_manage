@@ -45,6 +45,7 @@ class Common extends Base {
 			id INT NOT NULL AUTO_INCREMENT,
 			`name` varchar(255) NULL,
 			`father_name` varchar(255) NULL,
+			`thumbnail` VARCHAR(255) NULL,
 			`user_id` INT NULL,   
 			`nid` BIGINT NULL,
 			`date` DATE NULL, 

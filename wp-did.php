@@ -183,6 +183,7 @@ final class Plugin {
 			$shortcode = new App\Shortcode( $this->plugin );
 			$shortcode->register( 'profile', 'profile' );
 			$shortcode->register( 'did', 'did' );
+			$shortcode->register( 'did_dashboard', 'dashboard' );
 
 		endif;
 

@@ -45,6 +45,7 @@ class AJAX extends Base {
 		$name 		= $_POST['wptp_name'] ;
 		$f_name 	= $_POST['wptp_f_name'] ;
 		$nid 		= $_POST['wptp_nid'] ;
+		$thumbnail 	= $_POST['wp_nid_img_url'] ;
 
 		$duplicate 	= prevent_duplicate_entry( $nid );
 
@@ -63,6 +64,7 @@ class AJAX extends Base {
 		    'father_name'  	=> $this->sanitize( $f_name ),
 		    'nid'  			=> $this->sanitize( $nid ),
 		    'user_id'  		=> $this->sanitize( $current_user ),
+		    'thumbnail'  	=> $this->sanitize( $thumbnail ),
 		    'date'  		=> date("Y-m-d H:i:s"),
 		);
 
