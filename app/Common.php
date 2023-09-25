@@ -39,7 +39,8 @@ class Common extends Base {
 		global $wpdb;
 
 		$table_name 		= $wpdb->prefix . 'nid_table';
-		$create_nid_table 	= $wpdb->get_charset_collate();
+		$_table_name 		= $wpdb->prefix . 'did_table';
+		$create_table 	= $wpdb->get_charset_collate();
 
 		$sql = "CREATE TABLE $table_name (
 			id INT NOT NULL AUTO_INCREMENT,
@@ -50,7 +51,16 @@ class Common extends Base {
 			`nid` BIGINT NULL,
 			`date` DATE NULL, 
 			PRIMARY KEY (id)
-		) $create_nid_table;";
+		) $create_table;";
+
+		$sql .= "CREATE TABLE $_table_name (
+			id INT NOT NULL AUTO_INCREMENT,
+			`owner` varchar(255) NULL,
+			`doner` VARCHAR (255) NULL,   
+			`user_id` INT NULL,
+			`date` DATE NULL, 
+			PRIMARY KEY (id)
+		) $create_table;";
 
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 

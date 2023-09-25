@@ -94,9 +94,9 @@ jQuery(function($){
 		e.preventDefault();
 
 		let $form 	= $(this);
-		let owner 	=  $('#wp_did_owner').select2('data');
+		// let owner 	=  $('#wp_did_owner').select2('data');
 		// let owner 	=  $('#wp_did_owner').find(':selected').data('id');
-		console.log( owner );
+		// console.log( owner );
 
 		wpd_modal(true);
 		$.ajax({

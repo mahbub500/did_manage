@@ -60,12 +60,12 @@ class AJAX extends Base {
 		$table_name = $wpdb->prefix . 'nid_table';
 
 		$data_to_insert = array(
-		    'name'  		=> $this->sanitize( $name ),
-		    'father_name'  	=> $this->sanitize( $f_name ),
-		    'nid'  			=> $this->sanitize( $nid ),
-		    'user_id'  		=> $this->sanitize( $current_user ),
-		    'thumbnail'  	=> $this->sanitize( $thumbnail ),
-		    'date'  		=> date("Y-m-d H:i:s"),
+			'name'  		=> $this->sanitize( $name ),
+			'father_name'  	=> $this->sanitize( $f_name ),
+			'nid'  			=> $this->sanitize( $nid ),
+			'user_id'  		=> $this->sanitize( $current_user ),
+			'thumbnail'  	=> $this->sanitize( $thumbnail ),
+			'date'  		=> date("Y-m-d H:i:s"),
 		);
 
 		$wpdb->insert( $table_name, $data_to_insert );
@@ -85,6 +85,28 @@ class AJAX extends Base {
 				'message'	=> __( 'Unauthorized', 'wp-did' ),
 			], 401 );
 		}
+
+		update_option( 'did_test', $_POST );
+
+		$current_user = get_current_user_id();
+		
+		$owner 		[]= $_POST['wp_did_owner'] ;
+
+
+		update_option( '_doner',  $owner );
+		// update_option( 'doner',  json_encode ( $owner ));
+
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'did_table';
+
+		$data_to_insert = array(
+			'owner' 	=> $this->sanitize( json_decode( $owner )),
+			'doner' 	=> $this->sanitize( $doner ),
+			'user_id'  	=> $this->sanitize( $current_user ),
+			'date'  	=> date("Y-m-d H:i:s"),
+		);
+
+		$wpdb->insert( $table_name, $data_to_insert );
 
 		wp_send_json_success( [
 			'status'	=> 1,
