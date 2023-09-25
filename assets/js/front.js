@@ -78,10 +78,8 @@ jQuery(function($){
 	    search: {
         	return: true
     	}
-
-	    // order: [[3, 'desc']]
+    	
 	});
-	table.order([1, 'asc']).draw();
 
 	// select2 for did 
 	$("#wp_did_owner").select2({

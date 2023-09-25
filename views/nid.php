@@ -81,8 +81,8 @@ global $wpdb;
 						<td><?php echo $row['id'] ?></td>
 						<td><?php echo $row['name'] ?></td>
 						<td><?php echo $row['father_name'] ?></td>
-						<td><?php echo $row['nid'] ?></td>
-						<td><?php echo $row['thumbnail'] ?></td>
+						<td><?php echo $row['nid'] ?></td> 
+						<td> <img src="<?php echo $row['thumbnail'] ?> " style="width: 40px; height: 45px; border-radius: 50%;"></td>
 					</tr>
 				<?php            
 					}
