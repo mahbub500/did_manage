@@ -62,44 +62,44 @@ global $wpdb;
 <div class="container ">
 	<div class="row mt-1">
 		<div class="col-md-12">
-			<table id="wp_did_table" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-                <th>ID No:</th>
-                <th>Name</th>
-                <th>Father's Name</th>
-                <th>Nid</th>
-                <th>Thumbnail</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
-			if ( $results ) {
-				foreach ( $results as $row ) {   
-				?>
+		<table id="wp_did_table" class="table table-striped table-bordered" style="width:100%">
+	        <thead>
 				<tr>
-					<td><?php echo $row['id'] ?></td>
-					<td><?php echo $row['name'] ?></td>
-					<td><?php echo $row['father_name'] ?></td>
-					<td><?php echo $row['nid'] ?></td>
-					<td><?php echo $row['thumbnail'] ?></td>
+					<th>ID No:</th>
+					<th>Name</th>
+					<th>Father's Name</th>
+					<th>Nid</th>
+					<th>Thumbnail</th>
 				</tr>
+			</thead>
+			<tbody>
+				<?php 
+				if ( $results ) {
+					foreach ( $results as $row ) {   
+				?>
+					<tr>
+						<td><?php echo $row['id'] ?></td>
+						<td><?php echo $row['name'] ?></td>
+						<td><?php echo $row['father_name'] ?></td>
+						<td><?php echo $row['nid'] ?></td>
+						<td><?php echo $row['thumbnail'] ?></td>
+					</tr>
 				<?php            
+					}
 				}
-			}
 
-             ?>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-            </tr>
-        </tfoot>
-    </table>
+				?>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Name</th>
+					<th>Position</th>
+					<th>Office</th>
+					<th>Age</th>
+					<th>Start date</th>
+				</tr>
+			</tfoot>
+		</table>
 		</div>
 	</div>
 </div>
