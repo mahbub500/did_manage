@@ -1,4 +1,6 @@
-
+<?php 
+use Codexpert\WpDid\Helper;
+?>
 <div class="container">
 	<div class="row">
 
@@ -48,16 +50,10 @@
 global $wpdb;
 
         $table_name = $wpdb->prefix . 'nid_table';
-
-        $results = $wpdb->get_results( "SELECT * FROM $table_name", ARRAY_A );
-
-		if ( $results ) {
-			foreach ( $results as $row ) {
-				// Helper::pri( $row['name'] );
-			}
-        }
-
- ?>
+        $user_id 	= get_current_user_id();
+        $results 	= $wpdb->get_results( "SELECT * FROM $table_name WHERE user_id = $user_id ", ARRAY_A );
+        
+?>
 
 <div class="container ">
 	<div class="row mt-1">
@@ -81,7 +77,7 @@ global $wpdb;
 						<td><?php echo $row['id'] ?></td>
 						<td><?php echo $row['name'] ?></td>
 						<td><?php echo $row['father_name'] ?></td>
-						<td><?php echo $row['nid'] ?></td> 
+						<td><?php echo $row['user_id'] ?></td> 
 						<td> <img src="<?php echo $row['thumbnail'] ?> " style="width: 40px; height: 45px; border-radius: 50%;"></td>
 					</tr>
 				<?php            
