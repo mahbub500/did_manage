@@ -49,9 +49,9 @@ use Codexpert\WpDid\Helper;
 <?php 
 global $wpdb;
 
-        $table_name = $wpdb->prefix . 'nid_table';
-        $user_id 	= get_current_user_id();
-        $results 	= $wpdb->get_results( "SELECT * FROM $table_name WHERE user_id = $user_id ", ARRAY_A );
+		$table_name = $wpdb->prefix . 'nid_table';
+		$user_id 	= get_current_user_id();
+		$results 	= $wpdb->get_results( "SELECT * FROM $table_name WHERE user_id = $user_id ", ARRAY_A );
         
 ?>
 

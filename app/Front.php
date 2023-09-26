@@ -33,7 +33,14 @@ class Front extends Base {
 	}
 
 	public function head() {
-		// Helper::pri( get_option( '_doner' ) );
+		global $wpdb;
+		$table_name = $wpdb->prefix . 'did_table';
+        $user_id 	= get_current_user_id();
+        $results 	= $wpdb->get_results( "SELECT * FROM $table_name ", ARRAY_A );
+		foreach ( $results as $key => $value ) {
+			$owner = explode( ',', $value['owner'] );
+			// Helper::pri( $owner );
+		}
 	}
 	
 	/**
