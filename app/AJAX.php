@@ -86,21 +86,14 @@ class AJAX extends Base {
 			], 401 );
 		}
 
-		update_option( 'did_test', $_POST );
-
-		$current_user = get_current_user_id();
-		
-		$owner 		[]= $_POST['wp_did_owner'] ;
-
-
-		update_option( '_doner',  $owner );
-		// update_option( 'doner',  json_encode ( $owner ));
+		$current_user 	= get_current_user_id();
+		$owner 			= implode(",", $_POST["wp_did_owner"]);;
 
 		global $wpdb;
 		$table_name = $wpdb->prefix . 'did_table';
 
 		$data_to_insert = array(
-			'owner' 	=> $this->sanitize( json_decode( $owner )),
+			'owner' 	=> $this->sanitize( $owner ),
 			'doner' 	=> $this->sanitize( $doner ),
 			'user_id'  	=> $this->sanitize( $current_user ),
 			'date'  	=> date("Y-m-d H:i:s"),
