@@ -86,6 +86,8 @@ class AJAX extends Base {
 			], 401 );
 		}
 
+		update_option( 'did_test',  $_POST );
+
 		$current_user 	= get_current_user_id();
 		$owner 			= implode(",", $_POST["wp_did_owner"]);;
 
