@@ -23,6 +23,10 @@
 			<div class="col-md-3"></div>    
 			<div class="col-md-6">
 				<div class="form-group">
+					<label for="wpdid_date">Date</label>
+					<input type="date" name="wpdid_date" id="wpdid_date">
+				</div>
+				<div class="form-group">
 					<label for="wpdid_did_owner">Owner</label>
 					<select class="form-control" name="wp_did_owner[]" id="wp_did_owner" multiple="multiple">
 
@@ -35,15 +39,35 @@
 					   ?>
 					</select>
 				</div>
-
 				<div class="form-group">
-					<label for="wpdid_f_name">Father Name</label>
-					<input type="text" required class="form-control" id="wpdid_f_name" name="wpdid_f_name" placeholder="Enter Father Name">
+					<label for="wpdid_did_buyer">Bayer</label>
+					<select class="form-control" name="wp_did_buyer[]" id="wpdid_did_buyer" multiple="multiple">
+
+					  <?php 
+					  foreach ( $results as $key => $result ) {
+
+					  printf( '<option value="%1$s">%1$s( %2$s )</option>', $result->nid, $result->name );
+						}
+
+					   ?>
+					</select>
 				</div>
 				<div class="form-group">
-					<label for="wpdid_nid">Nid</label>
-					<input min="10" type="number" class="form-control" id="wpdid_nid" name="wpdid_nid" placeholder="Nid">
-					<small id="wpdid_nid_warning" class="form-text text-muted text-danger">NID Must be minimum 10 Digit & Max 15 Digit</small>
+					<label for="wpdid_did_no ml-3">Did No</label>
+					<input type="number" min="0" name="wpdid_did_no" id="wpdid_did_no">
+			
+					<label for="wpdid_did_location">Location</label>
+					<select name="wpdid_did_location" id="wpdid_did_location">
+						<option>Rampur</option>
+						<option>Bamni</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="wpdid_did_price">Did Price</label>
+					<input type="number" min="0" name="wpdid_did_price" id="wpdid_did_price">
+			
+					<label for="wpdid_total">Total Land</label>
+					<input type="number" min="0" name="wpdid_total" id="wpdid_total">
 				</div>
 				<button id="wpdid_submit"  type="submit" value="Submit" class="btn btn-primary">Submit</button>
 			</form>

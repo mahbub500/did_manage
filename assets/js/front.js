@@ -88,6 +88,13 @@ jQuery(function($){
 		
 	});
 
+	// select2 for did 
+	$("#wpdid_did_buyer").select2({
+		tags: false,
+		placeholder: 'Select all Buyer',
+		
+	});
+
 	// form submit for did
 
 	$('#did_submit').submit(function(e){
