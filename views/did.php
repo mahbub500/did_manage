@@ -15,6 +15,7 @@
 		$table_name = $wpdb->prefix . 'nid_table';
 		$query = "SELECT * FROM $table_name";
 		$results = $wpdb->get_results($query);
+		$today = date("j, n, Y"); 
 
 	?>
 		<form id="did_submit"  >
@@ -24,7 +25,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="wpdid_date">Date</label>
-					<input type="date" name="wpdid_date" id="wpdid_date">
+					<input type="date" value="20/10/3023" name="wpdid_date" id="wpdid_date">
 				</div>
 				<div class="form-group">
 					<label for="wpdid_did_owner">Owner</label>
