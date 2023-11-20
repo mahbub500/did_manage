@@ -1,8 +1,16 @@
 
-<div class="container">
-	<div class="row">
 
-		<?php 
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+		<div class="btn-group-vertical">
+		  <button type="button" class="btn btn-primary">Dahsboard</button>
+		  <button type="button" class="btn btn-primary">Add Nid</button>			 
+		  <button type="button" class="btn btn-primary">Add Did</button>
+		</div>
+	</div> 
+    <div class="col-md-10">
+    	<?php 
 	$is_loged_in = is_user_logged_in();
 	if ( false == $is_loged_in ) {
 		?>
@@ -18,10 +26,9 @@
 		$today = date("j, n, Y"); 
 
 	?>
-		<form id="did_submit"  >
+    	<form id="did_submit"  >
 			<?php wp_nonce_field(); ?>
-			<input type="hidden" name="action" value="store_did">
-			<div class="col-md-3"></div>    
+			<input type="hidden" name="action" value="store_did">			   
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="wpdid_date">Date</label>
@@ -72,7 +79,6 @@
 				</div>
 				<button id="wpdid_submit"  type="submit" value="Submit" class="btn btn-primary">Submit</button>
 			</form>
-		</div>  
-		<div class="col-md-3"></div>
-	</div>
+    </div>
+  </div>
 </div>
