@@ -15,7 +15,6 @@
             "Codexpert\\WpDid\\" : "classes/",
             "Codexpert\\WpDid\\App\\" : "app/",
             "Codexpert\\WpDid\\API\\" : "api/"
-        },
-        // "files": [ "inc/functions.php" ]
+        }
     }
 }
