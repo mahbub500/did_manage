@@ -31,7 +31,7 @@ use Codexpert\WpDid\Helper;
 				<div class="form-group">
 					<label for="wpdid_img_upload">Upload Image</label>
 					<input type="file" id="wpdid_img_upload">
-					<img id="wpdid_nid_image"  src="" style="max-width: 25%; height: 25%;">
+					<img 	id="wpdid_nid_image"  src="" style="max-width: 25%; height: 25%;">
 					<input type="hidden" id="wp_nid_img_url" name="wp_nid_img_url">
 				</div>
 				<div class="form-group">
