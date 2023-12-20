@@ -110,7 +110,7 @@ final class Plugin {
 		$this->plugin['min_php']		= '5.6';
 		$this->plugin['min_wp']			= '4.0';
 		$this->plugin['icon']			= WP_DID_ASSET . '/img/icon.png';
-		$this->plugin['depends']		= [ 'woocommerce/woocommerce.php' => 'WooCommerce' ];
+		// $this->plugin['depends']		= [ 'woocommerce/woocommerce.php' => 'WooCommerce' ];
 		
 	}
 
@@ -181,9 +181,9 @@ final class Plugin {
 			 * Shortcode related hooks
 			 */
 			$shortcode = new App\Shortcode( $this->plugin );
-			$shortcode->register( 'profile', 'profile' );
+			// $shortcode->register( 'profile', 'profile' );
 			$shortcode->register( 'did', 'did' );
-			$shortcode->register( 'did_dashboard', 'dashboard' );
+			// $shortcode->register( 'did_dashboard', 'dashboard' );
 
 		endif;
 
