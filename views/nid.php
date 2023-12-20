@@ -16,8 +16,7 @@ use Codexpert\WpDid\Helper;
 		<form id="nid_submit"  >
 			<?php wp_nonce_field(); ?>
 			<input type="hidden" name="action" value="store_nid">
-			<div class="col-md-3"></div>    
-			<div class="col-md-6">
+			
 				<div class="form-group">
 					<label for="wptp_name">Name</label>
 					<input type="text" required class="form-control" id="wptp_name" name="wptp_name" placeholder="Enter name">
@@ -41,7 +40,7 @@ use Codexpert\WpDid\Helper;
 				</div>
 				<button id="wptp_submit"  type="submit" value="Submit" class="btn btn-primary">Submit</button>
 			</form>
-		</div>  
+		 
 		<div class="col-md-3"></div>
 	</div>
 </div>
@@ -49,15 +48,13 @@ use Codexpert\WpDid\Helper;
 <?php 
 global $wpdb;
 
-		$table_name = $wpdb->prefix . 'nid_table';
-		$user_id 	= get_current_user_id();
-		$results 	= $wpdb->get_results( "SELECT * FROM $table_name WHERE user_id = $user_id ", ARRAY_A );
+$table_name = $wpdb->prefix . 'nid_table';
+$user_id 	= get_current_user_id();
+$results 	= $wpdb->get_results( "SELECT * FROM $table_name WHERE user_id = $user_id ", ARRAY_A );
         
 ?>
 
-<div class="container ">
-	<div class="row mt-1">
-		<div class="col-md-12">
+
 		<table id="wp_did_table" class="table table-striped table-bordered" style="width:100%">
 	        <thead>
 				<tr>
@@ -71,19 +68,19 @@ global $wpdb;
 			<tbody>
 				<?php 
 				if ( $results ) {
-					foreach ( $results as $row ) {   
-				?>
+					foreach ( $results as $row ) {  
+					printf( '
 					<tr>
-						<td><?php echo $row['id'] ?></td>
-						<td><?php echo $row['name'] ?></td>
-						<td><?php echo $row['father_name'] ?></td>
-						<td><?php echo $row['user_id'] ?></td> 
-						<td> <img src="<?php echo $row['thumbnail'] ?> " style="width: 40px; height: 45px; border-radius: 50%;"></td>
-					</tr>
-				<?php            
+						<td>%1$s</td>						 
+						<td>%1$s</td>						 
+						<td>%1$s</td>						 
+						<td>%1$s</td>						 
+						<td> <img src="%1$s" style="width: 40px; height: 45px; border-radius: 50%;"></td>
+					</tr>', $row['id'], $row['name'], $row['father_name'], $row['user_id'], $row['thumbnail'],  
+					); 
+				          
 					}
 				}
-
 				?>
 			</tbody>
 			<tfoot>
@@ -96,6 +93,4 @@ global $wpdb;
 				</tr>
 			</tfoot>
 		</table>
-		</div>
-	</div>
-</div>
+		

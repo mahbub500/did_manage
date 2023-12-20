@@ -1,7 +1,8 @@
 
 
 
-		<?php 
+<?php 
+use Codexpert\WpDid\Helper;
 	$is_loged_in = is_user_logged_in();
 	if ( false == $is_loged_in ) {
 		?>
@@ -16,7 +17,7 @@
 		$results = $wpdb->get_results($query);
 		$today = date("j, n, Y"); 
 
-	?>
+?>
 		
 		 
 	
@@ -27,7 +28,7 @@
 			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 			  <a class="nav-link active" id="did" data-toggle="pill" href="#add_did" role="tab" aria-controls="add_did" aria-selected="true">Add DID</a>
 			  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Add NID</a>
-			  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+			  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">NId List</a>
 			  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
 			</div>
 		</div>	
@@ -83,8 +84,7 @@
 			  	<form id="nid_submit"  >
 			<?php wp_nonce_field(); ?>
 			<input type="hidden" name="action" value="store_nid">
-			<div class="col-md-3"></div>    
-			<div class="col-md-6">
+			
 				<div class="form-group">
 					<label for="wptp_name">Name</label>
 					<input type="text" required class="form-control" id="wptp_name" name="wptp_name" placeholder="Enter name">
@@ -111,8 +111,8 @@
 			  	
 			  </div>
 			  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-			  	<h1>Two</h1>
-			  	
+			  	<h1>List</h1>
+			  		<?php echo Helper::get_template( 'nid_list' ) ?>			  	
 			  </div>
 			  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
 			  	<h1>Three</h1>
