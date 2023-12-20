@@ -20,16 +20,15 @@ $results 	= $wpdb->get_results( "SELECT * FROM $table_name WHERE user_id = $user
 		<?php 
 		if ( $results ) {
 			foreach ( $results as $row ) {  
-			printf( '
-			<tr>
-				<td>%1$s</td>						 
-				<td>%1$s</td>						 
-				<td>%1$s</td>						 
-				<td>%1$s</td>						 
-				<td> <img src="%1$s" style="width: 40px; height: 45px; border-radius: 50%;"></td>
-			</tr>', $row['id'], $row['name'], $row['father_name'], $row['user_id'], $row['thumbnail'],  
-			); 
-		          
+				printf( '
+				<tr>
+					<td>%1$s</td>						 
+					<td>%2$s</td>						 
+					<td>%3$s</td>						 
+					<td>%4$s</td>						 
+					<td> <img src="%5$s" style="width: 40px; height: 45px; border-radius: 50%;"></td>
+				</tr>', $row['id'], $row['name'], $row['father_name'], $row['user_id'], $row['thumbnail'],  
+				);
 			}
 		}
 		?>
