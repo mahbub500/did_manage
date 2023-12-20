@@ -3,19 +3,15 @@
 
 <?php 
 use Codexpert\WpDid\Helper;
-	$is_loged_in 	= is_user_logged_in();
-	$login_url  	= wp_login_url( get_permalink() );
-	if ( false == $is_loged_in ) {
 
-		printf( '<a href="%s" title="Login">Please Login</a>', $login_url );		 
-			return $login_url;
-		}
+$is_loged_in 	= is_user_logged_in();
+$login_url  	= wp_login_url( get_permalink() );
 
-		global $wpdb;
-		$table_name = $wpdb->prefix . 'nid_table';
-		$query = "SELECT * FROM $table_name";
-		$results = $wpdb->get_results($query);
-		$today = date("j, n, Y"); 
+if ( false == $is_loged_in ) {
+
+printf( '<a href="%s" title="Login">Please Login</a>', $login_url );		 
+	return $login_url;
+} 
 
 ?>
 		
