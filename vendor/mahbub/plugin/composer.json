@@ -1,0 +1,22 @@
+{
+    "name": "mahbub/plugin",
+    "type": "library",
+    "description": "Plugin tools for Codexpert",
+    "keywords": ["plugin","mahbub"],
+    "homepage": "https://bitbucket.org/codexpertio/codexpert-plugin",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Mahbub",
+            "email": "mahbubmr500@gmail.com",
+            "homepage": "http://wpgeekshub.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}

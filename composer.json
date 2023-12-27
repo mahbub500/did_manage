@@ -6,9 +6,10 @@
         }
     ],
     "require": {
-        "codexpert/plugin": "dev-master",
+        "mahbub/plugin": "dev-master",
         "pluggable/marketing": "dev-master",
         "pluggable/plugin": "dev-master"
+
     },
     "autoload": {
         "psr-4": {
